@@ -16,6 +16,7 @@ public class Reservation {
     public Reservation(ParkingSpot parkingSpot, Customer customer, int hours) {
         this.reservationId = "RES-" + (new Random().nextInt(9000000) + 10000000);
         this.startTime = LocalDateTime.now();
+        setDurationInHours(hours);
         this.status = Status.ACTIVE;
         this.customer = Objects.requireNonNull(customer, "Customer can't be null");
         this.parkingSpot = Objects.requireNonNull(parkingSpot, "Parking spot can't be null");
